@@ -1,4 +1,4 @@
 /node_modules/
-/screenshots/
-/support/
-/videos/
+/cypress/screenshots/
+/cypress/support/
+/cypress/videos/
