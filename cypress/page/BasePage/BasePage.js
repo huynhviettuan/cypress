@@ -37,7 +37,51 @@ export default class BasePage {
     }
 
     selectDropdown(locator, option) {
+        cy.log('Select dropdown : ' + locator + 'value: ' + option);
         this.getCyElement(locator).select(option);
+    }
+
+    selectDropdownByIndex(locator, index) {
+        this.getCyElement(locator).find('option').eq(index).then((dropdownIndex) => {
+            this.selectDropdown(locator, dropdownIndex.val());
+        });
+    }
+
+    check(locator) {
+        this.getCyElement(locator).should('be.checked').then((status) => {
+            if (status == false) {
+                this.getCyElement(locator).check();
+            } else {
+                cy.log('Element checked: ' + locator);
+            }
+        });
+    }
+
+    uncheck(locator) {
+        this.getCyElement(locator).should('be.checked').then((status) => {
+            if (status == true) {
+                this.getCyElement(locator).uncheck();
+            } else {
+                cy.log('Element unchecked: ' + locator);
+            }
+        });
+    }
+
+    waitForVisible(locator) {
+        this.getCyElement(locator).should('be.visible').then(() => {
+            cy.log('Element visible: ' + locator);
+        });
+    }
+
+    waitForInvisible(locator) {
+        this.getCyElement(locator).should('be.visible');
+        this.getCyElement(locator).should('not.be.visible').then(() => {
+            cy.log('Element invisible: ' + locator);
+        });;
+    }
+
+    acceptAlert(alertText){
+        
     }
 
 
