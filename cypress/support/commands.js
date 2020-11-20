@@ -23,3 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+// Switch to Iframe
+Cypress.Commands.add("sưitchToIframe", (iframe) => { 
+    return cy.get(iframe).its('0.content.Document.body').should('be.visible').then(cy.wrap);
+ });
