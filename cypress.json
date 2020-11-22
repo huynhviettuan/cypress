@@ -1,1 +1,7 @@
-{}
+{
+   "baseUrl" : "http://demo.guru99.com/v4",
+   "env" : {
+       "username" : "mngr295821",
+       "password" : "qegUzEz"
+   }
+}

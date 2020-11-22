@@ -8,5 +8,5 @@
 
 ##### Cypress run type:
 
-> * npm run cypress:run -- --spec "cypress/integration/CypressTest.js"
-> * npm run cypress:run -- --spec "cypress/integration/CypressTest.js" --browser "firefox"
+> * npm run cypress:run -- --spec "cypress/integration/{spec}.js"
+> * npm run cypress:run -- --spec "cypress/integration/{spec}.js" --browser "{browser}"
